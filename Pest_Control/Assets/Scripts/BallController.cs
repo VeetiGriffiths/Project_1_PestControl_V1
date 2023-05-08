@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
@@ -28,10 +29,14 @@ public class BallController : MonoBehaviour
 
     int counter = 0;
 
+    public GameObject RestartButton;
+
+
 
     // Start is called before the first frame update
     void Awake ()
     {
+        RestartButton = GameObject.Find("RestartButton");
         mainCamera = Camera.main;
         rb.maxAngularVelocity = 1000;
         isAiming = false;
@@ -115,5 +120,14 @@ public class BallController : MonoBehaviour
         rb.AddForce(direction * strength * shotPower);
         counter = counter + 1;
         Debug.Log(counter);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy Wasps Nest")
+        {
+            RestartButton.SetActive(true);
+            
+        }
     }
 }

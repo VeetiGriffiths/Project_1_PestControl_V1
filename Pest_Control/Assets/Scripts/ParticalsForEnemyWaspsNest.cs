@@ -17,13 +17,6 @@ public class ParticalsForEnemyWaspsNest : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Ball"))
-        {
-            particles.Play();
-        }
-    }
+    
 }
 
