@@ -12,15 +12,4 @@ public class CollisionEnablesNextLevel : MonoBehaviour
             Camera.main.transform.position += new Vector3(150f, 0f, 0f);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Enemy Wasps Nest
   - Ball
   - RestartGameButton
+  - Cup
   layers:
   - Default
   - TransparentFX
