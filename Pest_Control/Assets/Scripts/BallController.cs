@@ -112,19 +112,23 @@ public class BallController : MonoBehaviour
     private void Shoot(Vector3 point)
     {
         isAiming = false;
-
+        // Calculate a new Vector3 that has the same x and z coordinates as the point clicked, but the same y coordinate as the object's position.
         Vector3 horizontalWorldPoint = new Vector3(point.x, transform.position.y, point.z);
-
+        // Calculate a normalized direction vector towards the horizontalWorldPoint.
         Vector3 direction = (horizontalWorldPoint - transform.position).normalized;
+        // Calculate a force based on the distance to the horizontalWorldPoint and the shot power, and apply it in the direction calculated.
         float strength = Vector3.Distance(transform.position, horizontalWorldPoint);
         rb.AddForce(direction * strength * shotPower);
+        // Increment counter and log for debugging purposes
         counter = counter + 1;
         Debug.Log(counter);
     }
 
+    // This function is called when the object collides with another object.
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy Wasps Nest")
+        // If the collided object has the "Enemy Wasps Nest" tag, activate the RestartButton object.
+        if (collision.gameObject.tag == "Enemy Wasps Nest")
         {
             RestartButton.SetActive(true);
             
