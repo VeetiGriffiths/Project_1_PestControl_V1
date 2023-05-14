@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWaspsNestComesToBallPlayer : MonoBehaviour
-{
-    public GameObject ball;    // Reference to the player ball
-
-    public float speed = 3.0f; // Movement speed of the enemy
+{   // Reference to the player ball
+    public GameObject ball;
+    // Movement speed of the enemy
+    public float speed = 3.0f; 
 
     private void Update()
     {
